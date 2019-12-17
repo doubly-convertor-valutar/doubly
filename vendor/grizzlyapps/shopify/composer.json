@@ -1,0 +1,16 @@
+{
+    "name": "grizzlyapps/shopify",
+    "description": "Shopify API connector",
+    "require": {
+        "rocket-code/shopify": "^2.0",
+        "laracasts/flash": "^1.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragan Mihai",
+            "email": "michael.dragan@icloud.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

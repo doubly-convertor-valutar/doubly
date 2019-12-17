@@ -1,0 +1,54 @@
+.layered-currency-switcher {width:100%; margin:0px auto;padding: 0 50px;}
+.layered-currency-switcher li {
+  display: block;
+  float: left; font-size:15px;
+}
+.layered-currency-switcher li button.currency-switcher-btn {
+background: #fff;
+font-family: Arial !important;
+line-height:18px;
+border: 1px solid #dadada;
+border-radius:25px;
+color: #9a9a9a;
+float: left;
+font-weight: bold;
+margin-left: -46px;
+min-width: 90px;
+padding-left:49px;
+padding-top:10px;
+padding-bottom:10px;
+padding-right:11px;
+position: relative;
+text-align: center;
+text-decoration: none;
+}
+.layered-currency-switcher li button.currency-switcher-btn:focus { outline:none; -webkit-outline:none; -moz-outline:none; -o-outline:none; }
+.layered-currency-switcher li button.currency-switcher-btn:hover { 
+  background:#ddf6cf;
+  border-color:#a9d092;
+  color: #89b171;
+}
+.layered-currency-switcher li button.currency-switcher-btn span {
+  display: none;
+}
+.layered-currency-switcher li button.currency-switcher-btn:first-child { border-radius: 25px;}
+.layered-currency-switcher li button.currency-switcher-btn.selected {background:#de4c39;border-color: #de4c39;color: #fff;z-index: 99;padding-left:23px !important; padding-right:23px !important;}
+.layered-currency-switcher li button.currency-switcher-btn.selected span {display: inline-block;}
+
+/* price on hover */
+.doubly { position:relative; }
+.price-on-hover-wrapper { position: absolute; left: -50%; text-align: center; width: 200%; top: 110%; z-index:10000; font-size:15px !important; line-height: 25px !important; }
+.price-on-hover { background:#333333; border-color:#FFF !important; padding:2px 5px 3px 5px; font-size:15px !important; font-weight:normal; border-radius:5px; font-family: Helvetica Neue, Arial; color:#fff; border:0px; line-height: 25px !important; }
+.price-on-hover:after {
+    content:'';
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+    border-bottom: solid 4px #333333;
+    border-left: solid 4px transparent;
+    border-right: solid 4px transparent;
+}
+.doubly-message { margin:5px 0px; }

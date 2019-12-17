@@ -1,0 +1,2748 @@
+select.currency-switcher {
+  display: none; }
+
+.nice-select {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: "Helvetica Neue",Arial;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  line-height: 40px;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  width: auto; }
+.nice-select:hover {
+  border-color: #dbdbdb; }
+.nice-select:active, .nice-select.open, .nice-select:focus {
+  border-color: #88bfff; }
+.nice-select:after {
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  content: "";
+  display: block;
+  height: 5px;
+  box-sizing: content-box;
+  pointer-events: none;
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  -webkit-transform-origin: 66% 66%;
+          transform-origin: 66% 66%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  transition: all 0.15s ease-in-out;
+  width: 5px; }
+.nice-select.open:after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg); }
+.nice-select.open .list {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0); }
+.nice-select.disabled {
+  border-color: #ededed;
+  color: #999;
+  pointer-events: none; }
+.nice-select.disabled:after {
+  border-color: #cccccc; }
+.nice-select.wide {
+  width: 100%; }
+.nice-select.wide .list {
+  left: 0 !important;
+  right: 0 !important; }
+.nice-select.right {
+  float: right; }
+.nice-select.right .list {
+  left: auto;
+  right: 0; }
+.nice-select.small {
+  font-size: 12px;
+  height: 36px;
+  line-height: 34px; }
+.nice-select.small:after {
+  height: 4px;
+  width: 4px; }
+.nice-select.small .option {
+  line-height: 34px;
+  min-height: 34px; }
+.nice-select .list {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+  box-sizing: border-box;
+  margin:4px 0px 0px 0px !important;
+  opacity: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  max-height:260px;
+  left: 0;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: scale(0.75) translateY(-21px);
+  transform: scale(0.75) translateY(-21px);
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  z-index: 100000; 
+}
+.nice-select .list:hover .option:not(:hover) {
+  background-color: transparent !important; }
+.nice-select .option {
+  float: none !important;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 40px;
+  list-style: none;
+  min-height: 40px;
+  min-width:55px;
+  margin-bottom:0px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 52px;
+  text-align: left;
+  transition: all 0.2s; }
+
+.nice-select .option img { vertical-align:top; padding-top:10px; }
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+  background-color: #f6f6f6; }
+.nice-select .option.selected {
+  font-weight: bold; }
+.nice-select .current img { vertical-align:top; padding-top:10px; line-height: 45px; }
+
+/* SLIM */
+.nice-select.slim { padding:0 18px 0 0; height:20px; line-height:20px; border:0px; background:none !important; }
+.nice-select.slim .current .flags { margin-top:0px; }
+.nice-select.slim:after { right:4px; top:6px; }
+
+.flags {
+    background-image: url(".$flagsUrl.");
+    background-repeat: no-repeat;
+    display: block;
+    margin:10px 4px 0 0;
+    float: left;
+}
+
+.flags-Zimbabwe {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5px;
+}
+
+.flags-Zambia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -5px;
+}
+
+.flags-Yemen {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -5px;
+}
+
+.flags-Vietnam {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -5px;
+}
+
+.flags-Venezuela {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -5px;
+}
+
+.flags-Vatican-City {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -5px;
+}
+
+.flags-Vanuatu {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -5px;
+}
+
+.flags-Uzbekistan {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -5px;
+}
+
+.flags-Uruguay {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -5px;
+}
+
+.flags-United-States {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -5px;
+}
+
+.flags-United-Kingdom {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -5px;
+}
+
+.flags-United-Arab-Emirates {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -5px;
+}
+
+.flags-Ukraine {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -35px;
+}
+
+.flags-Uganda {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -35px;
+}
+
+.flags-Tuvalu {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -35px;
+}
+
+.flags-Turkmenistan {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -35px;
+}
+
+.flags-Turkey {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -35px;
+}
+
+.flags-Tunisia {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -35px;
+}
+
+.flags-Trinidad-and-Tobago {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -35px;
+}
+
+.flags-Tonga {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -35px;
+}
+
+.flags-Togo {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -35px;
+}
+
+.flags-Thailand {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -35px;
+}
+
+.flags-Tanzania {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -35px;
+}
+
+.flags-Tajikistan {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -35px;
+}
+
+.flags-Taiwan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -65px;
+}
+
+.flags-Syria {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -65px;
+}
+
+.flags-Switzerland {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -65px;
+}
+
+.flags-Sweden {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -65px;
+}
+
+.flags-Swaziland {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -65px;
+}
+
+.flags-Suriname {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -65px;
+}
+
+.flags-Sudan {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -65px;
+}
+
+.flags-Sri-Lanka {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -65px;
+}
+
+.flags-Spain {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -65px;
+}
+
+.flags-South-Sudan {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -65px;
+}
+
+.flags-South-Africa {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -65px;
+}
+
+.flags-Somalia {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -65px;
+}
+
+.flags-Solomon-Islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -95px;
+}
+
+.flags-Slovenia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -95px;
+}
+
+.flags-Slovakia {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -95px;
+}
+
+.flags-Singapore {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -95px;
+}
+
+.flags-Sierra-Leone {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -95px;
+}
+
+.flags-Seychelles {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -95px;
+}
+
+.flags-Serbia {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -95px;
+}
+
+.flags-Senegal {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -95px;
+}
+
+.flags-Saudi-Arabia {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -95px;
+}
+
+.flags-Sao-Tome-and-Principe {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -95px;
+}
+
+.flags-San-Marino {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -95px;
+}
+
+.flags-Samoa {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -95px;
+}
+
+.flags-Saint-Vincent-and-the-Grenadines {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -125px;
+}
+
+.flags-Saint-Lucia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -125px;
+}
+
+.flags-Saint-Kitts-and-Nevis {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -125px;
+}
+
+.flags-Rwanda {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -125px;
+}
+
+.flags-Russia {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -125px;
+}
+
+.flags-Romania {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -125px;
+}
+
+.flags-Qatar {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -125px;
+}
+
+.flags-Portugal {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -125px;
+}
+
+.flags-Poland {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -125px;
+}
+
+.flags-Philippines {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -125px;
+}
+
+.flags-Peru {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -125px;
+}
+
+.flags-Paraguay {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -125px;
+}
+
+.flags-Papua-New-Guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -155px;
+}
+
+.flags-Panama {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -155px;
+}
+
+.flags-Palau {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -155px;
+}
+
+.flags-Pakistan {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -155px;
+}
+
+.flags-Oman {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -155px;
+}
+
+.flags-Norway {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -155px;
+}
+
+.flags-Nigeria {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -155px;
+}
+
+.flags-Niger {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -155px;
+}
+
+.flags-Nicaragua {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -155px;
+}
+
+.flags-New-Zealand {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -155px;
+}
+
+.flags-Netherlands {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -155px;
+}
+
+.flags-Nepal {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -155px;
+}
+
+.flags-Nauru {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -185px;
+}
+
+.flags-Namibia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -185px;
+}
+
+.flags-Myanmar {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -185px;
+}
+
+.flags-Mozambique {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -185px;
+}
+
+.flags-Morocco {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -185px;
+}
+
+.flags-Montenegro {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -185px;
+}
+
+.flags-Mongolia {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -185px;
+}
+
+.flags-Monaco {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -185px;
+}
+
+.flags-Moldova {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -185px;
+}
+
+.flags-Micronesia-_Federated_ {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -185px;
+}
+
+.flags-Mexico {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -185px;
+}
+
+.flags-Mauritius {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -185px;
+}
+
+.flags-Mauritania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -215px;
+}
+
+.flags-Marshall-Islands {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -215px;
+}
+
+.flags-Malta {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -215px;
+}
+
+.flags-Mali {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -215px;
+}
+
+.flags-Maldives {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -215px;
+}
+
+.flags-Malaysia {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -215px;
+}
+
+.flags-Malawi {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -215px;
+}
+
+.flags-Madagascar {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -215px;
+}
+
+.flags-Macedonia {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -215px;
+}
+
+.flags-Luxembourg {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -215px;
+}
+
+.flags-Lithuania {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -215px;
+}
+
+.flags-Liechtenstein {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -215px;
+}
+
+.flags-Libya {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -245px;
+}
+
+.flags-Liberia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -245px;
+}
+
+.flags-Lesotho {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -245px;
+}
+
+.flags-Lebanon {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -245px;
+}
+
+.flags-Latvia {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -245px;
+}
+
+.flags-Laos {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -245px;
+}
+
+.flags-Kyrgyzstan {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -245px;
+}
+
+.flags-Kuwait {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -245px;
+}
+
+.flags-Kosovo {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -245px;
+}
+
+.flags-Korea-South {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -245px;
+}
+
+.flags-Korea-North {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -245px;
+}
+
+.flags-Kiribati {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -245px;
+}
+
+.flags-Kenya {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -275px;
+}
+
+.flags-Kazakhstan {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -275px;
+}
+
+.flags-Jordan {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -275px;
+}
+
+.flags-Japan {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -275px;
+}
+
+.flags-Jamaica {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -275px;
+}
+
+.flags-Italy {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -275px;
+}
+
+.flags-Israel {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -275px;
+}
+
+.flags-Ireland {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -275px;
+}
+
+.flags-Iraq {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -275px;
+}
+
+.flags-Iran {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -275px;
+}
+
+.flags-Indonesia {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -275px;
+}
+
+.flags-India {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -275px;
+}
+
+.flags-Iceland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -305px;
+}
+
+.flags-Hungary {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -305px;
+}
+
+.flags-Honduras {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -305px;
+}
+
+.flags-Haiti {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -305px;
+}
+
+.flags-Guyana {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -305px;
+}
+
+.flags-Guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -305px;
+}
+
+.flags-Guinea-Bissau {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -305px;
+}
+
+.flags-Guatemala {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -305px;
+}
+
+.flags-Grenada {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -305px;
+}
+
+.flags-Grecee {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -305px;
+}
+
+.flags-Ghana {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -305px;
+}
+
+.flags-Germany {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -305px;
+}
+
+.flags-Georgia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -335px;
+}
+
+.flags-Gambia {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -335px;
+}
+
+.flags-Gabon {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -335px;
+}
+
+.flags-France {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -335px;
+}
+
+.flags-Finland {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -335px;
+}
+
+.flags-Fiji {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -335px;
+}
+
+.flags-Ethiopia {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -335px;
+}
+
+.flags-Estonia {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -335px;
+}
+
+.flags-Eritrea {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -335px;
+}
+
+.flags-Equatorial-Guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -335px;
+}
+
+.flags-El-Salvador {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -335px;
+}
+
+.flags-Egypt {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -335px;
+}
+
+.flags-Ecuador {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -365px;
+}
+
+.flags-East-Timor {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -365px;
+}
+
+.flags-Dominican-Republic {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -365px;
+}
+
+.flags-Dominica {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -365px;
+}
+
+.flags-Djibouti {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -365px;
+}
+
+.flags-Denmark {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -365px;
+}
+
+.flags-Czech-Republic {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -365px;
+}
+
+.flags-Cyprus {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -365px;
+}
+
+.flags-Cuba {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -365px;
+}
+
+.flags-Croatia {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -365px;
+}
+
+.flags-Cote-d_Ivoire {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -365px;
+}
+
+.flags-Costa-Rica {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -365px;
+}
+
+.flags-Congo-Republic {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -395px;
+}
+
+.flags-Congo-Democratic {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -395px;
+}
+
+.flags-Comoros {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -395px;
+}
+
+.flags-Colombia {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -395px;
+}
+
+.flags-China {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -395px;
+}
+
+.flags-Chile {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -395px;
+}
+
+.flags-Chad {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -395px;
+}
+
+.flags-Central-African-Republic {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -395px;
+}
+
+.flags-Cape-Verde {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -395px;
+}
+
+.flags-Canada {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -395px;
+}
+
+.flags-Cameroon {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -395px;
+}
+
+.flags-Cambodia {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -395px;
+}
+
+.flags-Burundi {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -425px;
+}
+
+.flags-Burkina-Faso {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -425px;
+}
+
+.flags-Bulgaria {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -425px;
+}
+
+.flags-Brunei {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -425px;
+}
+
+.flags-Brazil {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -425px;
+}
+
+.flags-Botswana {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -425px;
+}
+
+.flags-Bosnia-and-Herzegovina {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -425px;
+}
+
+.flags-Bolivia {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -425px;
+}
+
+.flags-Bhutan {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -425px;
+}
+
+.flags-Benin {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -425px;
+}
+
+.flags-Belize {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -425px;
+}
+
+.flags-Belgium {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -425px;
+}
+
+.flags-Belarus {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -455px;
+}
+
+.flags-Barbados {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -455px;
+}
+
+.flags-Bangladesh {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -455px;
+}
+
+.flags-Bahrain {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -455px;
+}
+
+.flags-Bahamas {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -455px;
+}
+
+.flags-Azerbaijan {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -455px;
+}
+
+.flags-Austria {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -455px;
+}
+
+.flags-Australia {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -455px;
+}
+
+.flags-Armenia {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -455px;
+}
+
+.flags-Argentina {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -455px;
+}
+
+.flags-Antigua-and-Barbuda {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -455px;
+}
+
+.flags-Andorra {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -455px;
+}
+
+.flags-Algeria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -485px;
+}
+
+.flags-Albania {
+    width: 30px;
+    height: 20px;
+    background-position: -45px -485px;
+}
+
+.flags-Afghanistan {
+    width: 30px;
+    height: 20px;
+    background-position: -85px -485px;
+}
+
+.flags-Bermuda {
+    width: 30px;
+    height: 20px;
+    background-position: -125px -485px;
+}
+
+.flags-European-Union {
+    width: 30px;
+    height: 20px;
+    background-position: -165px -485px;
+}
+
+.flags-XPT {
+    width: 30px;
+    height: 20px;
+    background-position: -205px -485px;
+}
+
+.flags-XAU {
+    width: 30px;
+    height: 20px;
+    background-position: -245px -485px;
+}
+
+.flags-XAG {
+    width: 30px;
+    height: 20px;
+    background-position: -285px -485px;
+}
+
+.flags-Wallis-and-Futuna {
+    width: 30px;
+    height: 20px;
+    background-position: -325px -485px;
+}
+
+.flags-Seborga {
+    width: 30px;
+    height: 20px;
+    background-position: -365px -485px;
+}
+
+.flags-Aruba {
+    width: 30px;
+    height: 20px;
+    background-position: -405px -485px;
+}
+
+.flags-Angola {
+    width: 30px;
+    height: 20px;
+    background-position: -445px -485px;
+}
+
+.flags-Saint-Helena {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -5px;
+}
+
+.flags-Macao {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -35px;
+}
+
+.flags-Jersey {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -65px;
+}
+
+.flags-Isle-of-Man {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -95px;
+}
+
+.flags-IMF {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -125px;
+}
+
+.flags-Hong-Kong {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -155px;
+}
+
+.flags-Guernsey {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -185px;
+}
+
+.flags-Gibraltar {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -215px;
+}
+
+.flags-Falkland-Islands {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -245px;
+}
+
+.flags-Curacao {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -275px;
+}
+
+.flags-Cayman-Islands {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -305px;
+}
+
+.flags-Bitcoin {
+    width: 30px;
+    height: 20px;
+    background-position: -485px -335px;
+}
+.flags-small {
+    background-image: url(".$flagsSmallUrl.");
+    background-repeat: no-repeat;
+    display: block;
+    margin:10px 4px 0 0;
+    float: left;
+}
+
+.flags-small.flags-Zimbabwe {
+    width: 15px;
+    height: 10px;
+    background-position: 0 0;
+}
+
+.flags-small.flags-Zambia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px 0;
+}
+
+.flags-small.flags-Yemen {
+    width: 15px;
+    height: 10px;
+    background-position: -30px 0;
+}
+
+.flags-small.flags-Vietnam {
+    width: 15px;
+    height: 10px;
+    background-position: -45px 0;
+}
+
+.flags-small.flags-Venezuela {
+    width: 15px;
+    height: 10px;
+    background-position: -60px 0;
+}
+
+.flags-small.flags-Vatican-City {
+    width: 15px;
+    height: 10px;
+    background-position: -75px 0;
+}
+
+.flags-small.flags-Vanuatu {
+    width: 15px;
+    height: 10px;
+    background-position: -90px 0;
+}
+
+.flags-small.flags-Uzbekistan {
+    width: 15px;
+    height: 10px;
+    background-position: -105px 0;
+}
+
+.flags-small.flags-Uruguay {
+    width: 15px;
+    height: 10px;
+    background-position: -120px 0;
+}
+
+.flags-small.flags-United-States {
+    width: 15px;
+    height: 10px;
+    background-position: -135px 0;
+}
+
+.flags-small.flags-United-Kingdom {
+    width: 15px;
+    height: 10px;
+    background-position: -150px 0;
+}
+
+.flags-small.flags-United-Arab-Emirates {
+    width: 15px;
+    height: 10px;
+    background-position: -165px 0;
+}
+
+.flags-small.flags-Ukraine {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -10px;
+}
+
+.flags-small.flags-Uganda {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -10px;
+}
+
+.flags-small.flags-Tuvalu {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -10px;
+}
+
+.flags-small.flags-Turkmenistan {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -10px;
+}
+
+.flags-small.flags-Turkey {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -10px;
+}
+
+.flags-small.flags-Tunisia {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -10px;
+}
+
+.flags-small.flags-Trinidad-and-Tobago {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -10px;
+}
+
+.flags-small.flags-Tonga {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -10px;
+}
+
+.flags-small.flags-Togo {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -10px;
+}
+
+.flags-small.flags-Thailand {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -10px;
+}
+
+.flags-small.flags-Tanzania {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -10px;
+}
+
+.flags-small.flags-Tajikistan {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -10px;
+}
+
+.flags-small.flags-Taiwan {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -20px;
+}
+
+.flags-small.flags-Syria {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -20px;
+}
+
+.flags-small.flags-Switzerland {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -20px;
+}
+
+.flags-small.flags-Sweden {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -20px;
+}
+
+.flags-small.flags-Swaziland {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -20px;
+}
+
+.flags-small.flags-Suriname {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -20px;
+}
+
+.flags-small.flags-Sudan {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -20px;
+}
+
+.flags-small.flags-Sri-Lanka {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -20px;
+}
+
+.flags-small.flags-Spain {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -20px;
+}
+
+.flags-small.flags-South-Sudan {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -20px;
+}
+
+.flags-small.flags-South-Africa {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -20px;
+}
+
+.flags-small.flags-Somalia {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -20px;
+}
+
+.flags-small.flags-Solomon-Islands {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -30px;
+}
+
+.flags-small.flags-Slovenia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -30px;
+}
+
+.flags-small.flags-Slovakia {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -30px;
+}
+
+.flags-small.flags-Singapore {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -30px;
+}
+
+.flags-small.flags-Sierra-Leone {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -30px;
+}
+
+.flags-small.flags-Seychelles {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -30px;
+}
+
+.flags-small.flags-Serbia {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -30px;
+}
+
+.flags-small.flags-Senegal {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -30px;
+}
+
+.flags-small.flags-Saudi-Arabia {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -30px;
+}
+
+.flags-small.flags-Sao-Tome-and-Principe {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -30px;
+}
+
+.flags-small.flags-San-Marino {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -30px;
+}
+
+.flags-small.flags-Samoa {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -30px;
+}
+
+.flags-small.flags-Saint-Vincent-and-the-Grenadines {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -40px;
+}
+
+.flags-small.flags-Saint-Lucia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -40px;
+}
+
+.flags-small.flags-Saint-Kitts-and-Nevis {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -40px;
+}
+
+.flags-small.flags-Rwanda {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -40px;
+}
+
+.flags-small.flags-Russia {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -40px;
+}
+
+.flags-small.flags-Romania {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -40px;
+}
+
+.flags-small.flags-Qatar {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -40px;
+}
+
+.flags-small.flags-Portugal {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -40px;
+}
+
+.flags-small.flags-Poland {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -40px;
+}
+
+.flags-small.flags-Philippines {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -40px;
+}
+
+.flags-small.flags-Peru {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -40px;
+}
+
+.flags-small.flags-Paraguay {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -40px;
+}
+
+.flags-small.flags-Papua-New-Guinea {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -50px;
+}
+
+.flags-small.flags-Panama {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -50px;
+}
+
+.flags-small.flags-Palau {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -50px;
+}
+
+.flags-small.flags-Pakistan {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -50px;
+}
+
+.flags-small.flags-Oman {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -50px;
+}
+
+.flags-small.flags-Norway {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -50px;
+}
+
+.flags-small.flags-Nigeria {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -50px;
+}
+
+.flags-small.flags-Niger {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -50px;
+}
+
+.flags-small.flags-Nicaragua {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -50px;
+}
+
+.flags-small.flags-New-Zealand {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -50px;
+}
+
+.flags-small.flags-Netherlands {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -50px;
+}
+
+.flags-small.flags-Nepal {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -50px;
+}
+
+.flags-small.flags-Nauru {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -60px;
+}
+
+.flags-small.flags-Namibia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -60px;
+}
+
+.flags-small.flags-Myanmar {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -60px;
+}
+
+.flags-small.flags-Mozambique {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -60px;
+}
+
+.flags-small.flags-Morocco {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -60px;
+}
+
+.flags-small.flags-Montenegro {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -60px;
+}
+
+.flags-small.flags-Mongolia {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -60px;
+}
+
+.flags-small.flags-Monaco {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -60px;
+}
+
+.flags-small.flags-Moldova {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -60px;
+}
+
+.flags-small.flags-Micronesia-_Federated_ {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -60px;
+}
+
+.flags-small.flags-Mexico {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -60px;
+}
+
+.flags-small.flags-Mauritius {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -60px;
+}
+
+.flags-small.flags-Mauritania {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -70px;
+}
+
+.flags-small.flags-Marshall-Islands {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -70px;
+}
+
+.flags-small.flags-Malta {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -70px;
+}
+
+.flags-small.flags-Mali {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -70px;
+}
+
+.flags-small.flags-Maldives {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -70px;
+}
+
+.flags-small.flags-Malaysia {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -70px;
+}
+
+.flags-small.flags-Malawi {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -70px;
+}
+
+.flags-small.flags-Madagascar {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -70px;
+}
+
+.flags-small.flags-Macedonia {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -70px;
+}
+
+.flags-small.flags-Luxembourg {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -70px;
+}
+
+.flags-small.flags-Lithuania {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -70px;
+}
+
+.flags-small.flags-Liechtenstein {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -70px;
+}
+
+.flags-small.flags-Libya {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -80px;
+}
+
+.flags-small.flags-Liberia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -80px;
+}
+
+.flags-small.flags-Lesotho {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -80px;
+}
+
+.flags-small.flags-Lebanon {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -80px;
+}
+
+.flags-small.flags-Latvia {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -80px;
+}
+
+.flags-small.flags-Laos {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -80px;
+}
+
+.flags-small.flags-Kyrgyzstan {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -80px;
+}
+
+.flags-small.flags-Kuwait {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -80px;
+}
+
+.flags-small.flags-Kosovo {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -80px;
+}
+
+.flags-small.flags-Korea-South {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -80px;
+}
+
+.flags-small.flags-Korea-North {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -80px;
+}
+
+.flags-small.flags-Kiribati {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -80px;
+}
+
+.flags-small.flags-Kenya {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -90px;
+}
+
+.flags-small.flags-Kazakhstan {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -90px;
+}
+
+.flags-small.flags-Jordan {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -90px;
+}
+
+.flags-small.flags-Japan {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -90px;
+}
+
+.flags-small.flags-Jamaica {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -90px;
+}
+
+.flags-small.flags-Italy {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -90px;
+}
+
+.flags-small.flags-Israel {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -90px;
+}
+
+.flags-small.flags-Ireland {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -90px;
+}
+
+.flags-small.flags-Iraq {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -90px;
+}
+
+.flags-small.flags-Iran {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -90px;
+}
+
+.flags-small.flags-Indonesia {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -90px;
+}
+
+.flags-small.flags-India {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -90px;
+}
+
+.flags-small.flags-Iceland {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -100px;
+}
+
+.flags-small.flags-Hungary {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -100px;
+}
+
+.flags-small.flags-Honduras {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -100px;
+}
+
+.flags-small.flags-Haiti {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -100px;
+}
+
+.flags-small.flags-Guyana {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -100px;
+}
+
+.flags-small.flags-Guinea {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -100px;
+}
+
+.flags-small.flags-Guinea-Bissau {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -100px;
+}
+
+.flags-small.flags-Guatemala {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -100px;
+}
+
+.flags-small.flags-Grenada {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -100px;
+}
+
+.flags-small.flags-Grecee {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -100px;
+}
+
+.flags-small.flags-Ghana {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -100px;
+}
+
+.flags-small.flags-Germany {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -100px;
+}
+
+.flags-small.flags-Georgia {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -110px;
+}
+
+.flags-small.flags-Gambia {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -110px;
+}
+
+.flags-small.flags-Gabon {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -110px;
+}
+
+.flags-small.flags-France {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -110px;
+}
+
+.flags-small.flags-Finland {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -110px;
+}
+
+.flags-small.flags-Fiji {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -110px;
+}
+
+.flags-small.flags-Ethiopia {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -110px;
+}
+
+.flags-small.flags-Estonia {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -110px;
+}
+
+.flags-small.flags-Eritrea {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -110px;
+}
+
+.flags-small.flags-Equatorial-Guinea {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -110px;
+}
+
+.flags-small.flags-El-Salvador {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -110px;
+}
+
+.flags-small.flags-Egypt {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -110px;
+}
+
+.flags-small.flags-Ecuador {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -120px;
+}
+
+.flags-small.flags-East-Timor {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -120px;
+}
+
+.flags-small.flags-Dominican-Republic {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -120px;
+}
+
+.flags-small.flags-Dominica {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -120px;
+}
+
+.flags-small.flags-Djibouti {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -120px;
+}
+
+.flags-small.flags-Denmark {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -120px;
+}
+
+.flags-small.flags-Czech-Republic {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -120px;
+}
+
+.flags-small.flags-Cyprus {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -120px;
+}
+
+.flags-small.flags-Cuba {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -120px;
+}
+
+.flags-small.flags-Croatia {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -120px;
+}
+
+.flags-small.flags-Cote-d_Ivoire {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -120px;
+}
+
+.flags-small.flags-Costa-Rica {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -120px;
+}
+
+.flags-small.flags-Congo-Republic {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -130px;
+}
+
+.flags-small.flags-Congo-Democratic {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -130px;
+}
+
+.flags-small.flags-Comoros {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -130px;
+}
+
+.flags-small.flags-Colombia {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -130px;
+}
+
+.flags-small.flags-China {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -130px;
+}
+
+.flags-small.flags-Chile {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -130px;
+}
+
+.flags-small.flags-Chad {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -130px;
+}
+
+.flags-small.flags-Central-African-Republic {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -130px;
+}
+
+.flags-small.flags-Cape-Verde {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -130px;
+}
+
+.flags-small.flags-Canada {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -130px;
+}
+
+.flags-small.flags-Cameroon {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -130px;
+}
+
+.flags-small.flags-Cambodia {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -130px;
+}
+
+.flags-small.flags-Burundi {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -140px;
+}
+
+.flags-small.flags-Burkina-Faso {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -140px;
+}
+
+.flags-small.flags-Bulgaria {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -140px;
+}
+
+.flags-small.flags-Brunei {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -140px;
+}
+
+.flags-small.flags-Brazil {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -140px;
+}
+
+.flags-small.flags-Botswana {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -140px;
+}
+
+.flags-small.flags-Bosnia-and-Herzegovina {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -140px;
+}
+
+.flags-small.flags-Bolivia {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -140px;
+}
+
+.flags-small.flags-Bhutan {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -140px;
+}
+
+.flags-small.flags-Benin {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -140px;
+}
+
+.flags-small.flags-Belize {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -140px;
+}
+
+.flags-small.flags-Belgium {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -140px;
+}
+
+.flags-small.flags-Belarus {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -150px;
+}
+
+.flags-small.flags-Barbados {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -150px;
+}
+
+.flags-small.flags-Bangladesh {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -150px;
+}
+
+.flags-small.flags-Bahrain {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -150px;
+}
+
+.flags-small.flags-Bahamas {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -150px;
+}
+
+.flags-small.flags-Azerbaijan {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -150px;
+}
+
+.flags-small.flags-Austria {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -150px;
+}
+
+.flags-small.flags-Australia {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -150px;
+}
+
+.flags-small.flags-Armenia {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -150px;
+}
+
+.flags-small.flags-Argentina {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -150px;
+}
+
+.flags-small.flags-Antigua-and-Barbuda {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -150px;
+}
+
+.flags-small.flags-Andorra {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -150px;
+}
+
+.flags-small.flags-Algeria {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -160px;
+}
+
+.flags-small.flags-Albania {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -160px;
+}
+
+.flags-small.flags-Afghanistan {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -160px;
+}
+
+.flags-small.flags-Bermuda {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -160px;
+}
+
+.flags-small.flags-European-Union {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -160px;
+}
+
+.flags-small.flags-United-States {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -160px;
+}
+
+.flags-small.flags-XPT {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -160px;
+}
+
+.flags-small.flags-XAU {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -160px;
+}
+
+.flags-small.flags-XAG {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -160px;
+}
+
+.flags-small.flags-Wallis-and-Futuna {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -160px;
+}
+
+.flags-small.flags-Seborga {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -160px;
+}
+
+.flags-small.flags-Aruba {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -160px;
+}
+
+.flags-small.flags-Angola {
+    width: 15px;
+    height: 10px;
+    background-position: 0 -170px;
+}
+
+.flags-small.flags-Saint-Helena {
+    width: 15px;
+    height: 10px;
+    background-position: -15px -170px;
+}
+
+.flags-small.flags-Macao {
+    width: 15px;
+    height: 10px;
+    background-position: -30px -170px;
+}
+
+.flags-small.flags-Jersey {
+    width: 15px;
+    height: 10px;
+    background-position: -45px -170px;
+}
+
+.flags-small.flags-Isle-of-Man {
+    width: 15px;
+    height: 10px;
+    background-position: -60px -170px;
+}
+
+.flags-small.flags-IMF {
+    width: 15px;
+    height: 10px;
+    background-position: -75px -170px;
+}
+
+.flags-small.flags-Hong-Kong {
+    width: 15px;
+    height: 10px;
+    background-position: -90px -170px;
+}
+
+.flags-small.flags-Guernsey {
+    width: 15px;
+    height: 10px;
+    background-position: -105px -170px;
+}
+
+.flags-small.flags-Gibraltar {
+    width: 15px;
+    height: 10px;
+    background-position: -120px -170px;
+}
+
+.flags-small.flags-Falkland-Islands {
+    width: 15px;
+    height: 10px;
+    background-position: -135px -170px;
+}
+
+.flags-small.flags-Curacao {
+    width: 15px;
+    height: 10px;
+    background-position: -150px -170px;
+}
+
+.flags-small.flags-Cayman-Islands {
+    width: 15px;
+    height: 10px;
+    background-position: -165px -170px;
+}
+
+.flags-small.flags-Bitcoin {
+    width: 15px;
+    height: 10px;
+    background-position: -180px 0;
+}
+.doubly-float .nice-select .list{top:".$top.";left:0;right:auto}

@@ -1,0 +1,61 @@
+.dataTables_wrapper { width: inherit; }
+
+table.fixedHeader-floating {
+  position: fixed;
+  background-color: white;
+}
+
+table.fixedHeader-floating.no-footer {
+  border-bottom-width: 0;
+}
+
+table.fixedHeader-locked {
+  position: absolute;
+  background-color: white;
+}
+
+table.fixedHeader-locked {
+  position: absolute;
+  background-color: white;
+}
+
+table.dt-rowReorder-float {
+  position: absolute !important;
+  opacity: 0.8;
+  background: #ffffff;
+  table-layout: static;
+  outline: 1px solid #d6e5ef;
+  outline-offset: -1px;
+}
+
+tr.dt-rowReorder-moving {
+  outline: 1px solid #479ccf;
+  outline-offset: -1px;
+}
+
+body.dt-rowReorder-noOverflow {
+  overflow-x: hidden;
+}
+
+
+.dt-buttons { padding-bottom:0px; }
+.datatable-section { padding:0px; }
+.datatable-section .next-field__connected-wrapper .next-select__wrapper { border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+
+.action { width:72px; }
+li, th { outline:none; }
+.move-icon { background: url('../images/move.svg'); width: 14px; height: 14px; }
+.disabled .move-icon { background: url('../images/move-disabled.svg'); width: 14px; height: 14px; }
+
+#currency-by-country .reportcard .reportcard-name { margin-top: 0px; padding: 10px 5px 0px; }
+#currency-by-country .reportcard.order_reports .reportcard-link:focus { background: none; }
+#currency-by-country .reportcard.order_reports .reportcard-link:focus .reportcard-name { color:#31373d; }
+#currency-by-country #selected-currencies > ul { float: left; clear: both; width: 100%; margin-bottom:20px; border-bottom: 1px solid #ebeef0; }
+#currency-by-country #selected-currencies .link { font-weight: bold; color: #479ccf; }
+#currency-by-country .name { width: 35%; }
+#currency-by-country .currency_code { width: 65%; }
+
+/* make buttons responsive */
+.segmented-small { list-style:none; }
+.segmented-small li { display: inline; }
+.segmented-small li .btn { margin:3px 0px; }
